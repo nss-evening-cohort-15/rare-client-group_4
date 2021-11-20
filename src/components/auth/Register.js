@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom"
 import "./Auth.css"
+import { useHistory } from "react-router-dom"
 
 export const Register = (props) => {
     const firstName = useRef()
@@ -10,6 +11,7 @@ export const Register = (props) => {
     const password = useRef()
     const verifyPassword = useRef()
     const passwordDialog = useRef()
+    const history = useHistory()
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -35,7 +37,8 @@ export const Register = (props) => {
                 .then(res => {
                     if ("valid" in res && res.valid) {
                         localStorage.setItem("rare_user_id", res.token)
-                        props.history.push("/")
+                        // props.history.push("/")
+                        history.push("/")
                     }
                 })
         } else {
