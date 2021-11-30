@@ -17,15 +17,13 @@ export const ApplicationViews = () => {
                     <Route exact path="/posts">
                         <PostList />
                     </Route>
+                    
                     <Route path="/posts/create">
                         <PostForm />
                     </Route>
 
                     <Route path="/profiles">
                         <ProfileList />
-                    </Route>
-                    <Route path="/posts">
-                        <PostList />
                     </Route>
                 </ProfileProvider>
             </PostProvider>
