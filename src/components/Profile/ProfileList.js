@@ -15,7 +15,7 @@ export const ProfileList = () => {
     return (
         <>
             <h2>Profile</h2>
-            <section classname="profile">
+            <section className="profile">
                 {
                     profiles.map(profile => {
                         return (
