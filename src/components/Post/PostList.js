@@ -18,7 +18,7 @@ export const PostList = () => {
         <>
             <h2>Posts</h2>
             <button onClick={
-                () => history.push("/")
+                () => history.push("/posts/create")
             }>
                 Create New Post
             </button>
