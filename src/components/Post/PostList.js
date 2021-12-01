@@ -26,14 +26,13 @@ export const PostList = () => {
 
     return (
         <>
-
             <h1>Posts</h1>
             <h2>Details</h2>
             <button onClick={
                 () => history.push("/posts/create")
             }>
                 Create New Post
-            </button>
+            </button>{' '}
             <div>
                 {
                     filteredPosts.map(post => {
@@ -41,7 +40,6 @@ export const PostList = () => {
                     })
                 }
             </div>
-
         </>
     )
 }
