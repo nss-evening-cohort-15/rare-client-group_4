@@ -22,7 +22,7 @@ export const ApplicationViews = () => {
                         <PostForm />
                     </Route>
 
-                    <Route path="/profiles">
+                    <Route exact path="/profiles">
                         <ProfileList />
                     </Route>
                 </ProfileProvider>
