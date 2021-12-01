@@ -8,8 +8,8 @@ export const ProfileProvider = (props) => {
 
     const getProfiles = () => {
         return fetch("http://localhost:8088/users")
-        .then(res => res.json())
-        .then(setProfiles) 
+            .then(res => res.json())
+            .then(setProfiles)
     }
 
     const getProfileById = (userId) => {
@@ -24,5 +24,5 @@ export const ProfileProvider = (props) => {
         }}>
             {props.children}
         </ProfileContext.Provider>
-    )   
+    )
 }
