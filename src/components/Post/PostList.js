@@ -9,7 +9,7 @@ export const PostList = () => {
     const { posts, getPosts, searchTerms } = useContext(PostContext)
 
     const [filteredPosts, setFiltered] = useState([])
-    // const history = useHistory()
+    const history = useHistory()
 
     useEffect(() => {
         getPosts()
@@ -26,16 +26,22 @@ export const PostList = () => {
 
     return (
         <>
+
+            <h1>Posts</h1>
+            <h2>Details</h2>
+            <button onClick={
+                () => history.push("/posts/create")
+            }>
+                Create New Post
+            </button>
             <div>
-                <h1>Posts</h1>
-                <div>
-                    {
-                        filteredPosts.map(post => {
-                            return <PostDetail key={post.id} post={post} />
-                        })
-                    }
-                </div>
+                {
+                    filteredPosts.map(post => {
+                        return <PostDetail key={post.id} post={post} />
+                    })
+                }
             </div>
+
         </>
     )
 }

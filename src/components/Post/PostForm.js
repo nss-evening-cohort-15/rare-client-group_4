@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from "react"
 import { PostContext } from "./PostProvider"
+import { ProfileContext } from "../Profile/ProfileProvider"
 import "./Post.css"
 import { useHistory, useParams } from "react-router-dom"
 
 
 export const PostForm = () => {
     const { addPost, getPostById, updatePost } = useContext(PostContext)
+    const { getProfiles } = useContext(ProfileContext)
     // const { users, getUsers } = useContext(UserContext)
 
     const [post, setPost] = useState({
@@ -25,15 +27,15 @@ export const PostForm = () => {
     // const { userId } = useParams();
     // const [value, setValue] = setState("")
 
-    const editCheckChange = (event) => {
-        const newPost = { ...post }
-        newPost[event.target.id] = event.target.value
-        setPost(newPost)
-    }
+    // const editCheckChange = (event) => {
+    //     const newPost = { ...post }
+    //     newPost[event.target.id] = event.target.value
+    //     setPost(newPost)
+    // }
 
-    // useEffect(() => {
-    //     getUsers()
-    // }, [])
+    useEffect(() => {
+        getProfiles()
+    }, [])
 
     useEffect(() => {
         if (postId) {

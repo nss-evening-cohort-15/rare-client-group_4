@@ -23,7 +23,7 @@ export const PostDetail = (props) => {
         getProfiles()
         console.log(props);
         if (!props.post) {
-            const thisPost = posts.find(post => post.id === parseInt(postId)) || { profile: {} }
+            const thisPost = posts.find(post => post.id === parseInt(postId)) || { profile: {}, category: {} }
             setPost(thisPost)
         }
 
@@ -31,27 +31,15 @@ export const PostDetail = (props) => {
 
     return (
         <>
-            <h2>Details</h2>
-            <button onClick={
-                () => history.push("/posts/create")
-            }>
-                Create New Post
-            </button>
+
             <section className="posts">
                 {
                     posts.map(post => {
                         return (
                             <div className="post">
-                                <div>
-                                    Title: {post.title}
-                                </div>
-                                <div>
-                                    Published: {post.publication_date}
-                                </div>
-                                <div>
-                                    {post.content}
-                                </div>
-
+                                <div>Title: {post.title}</div>
+                                <div>Published: {post.publication_date}</div>
+                                <div>{post.content}</div>
                             </div>
                         )
                     })
@@ -59,9 +47,5 @@ export const PostDetail = (props) => {
             </section>
         </>
     )
-
-
-
-
 
 }
